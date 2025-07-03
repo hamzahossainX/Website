@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video AI Tools - Create Videos with Artificial Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .tool-card {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            transition: all 0.3s ease;
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+            border-color: rgba(56, 189, 248, 0.4);
+        }
+        .btn-primary {
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(56, 189, 248, 0.4);
+        }
+        .particle {
+            position: absolute;
+            background-color: rgba(56, 189, 248, 0.2);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Particle Background -->
+    <div id="particles"></div>
+
+    <!-- Header -->
+    <header class="py-12 px-4 sm:px-6 lg:px-8 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+                <span class="gradient-text">Video AI Tools</span>
+            </h1>
+            <p class="text-xl text-slate-300 mb-8">Create stunning videos with the power of artificial intelligence</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <!-- Article Section -->
+        <section class="mb-16">
+            <div class="bg-slate-800/50 rounded-xl p-6 md:p-8 border border-slate-700/50 shadow-lg">
+                <h2 class="text-2xl font-bold mb-4 gradient-text">The Future of Video Creation</h2>
+                <div class="space-y-4 text-slate-300">
+                    <p>
+                        Video AI refers to artificial intelligence systems capable of generating, editing, or enhancing videos from text, images, or other videos. 
+                        Using advanced models like diffusion transformers or multimodal neural networks, these tools automate what once took hours of manual work.
+                    </p>
+                    <p>
+                        Modern video AI systems work through several approaches. Text-to-video models convert written prompts into moving visuals, while diffusion models 
+                        gradually refine random noise into coherent video frames. Generative networks can create entirely new content by learning from vast datasets of existing videos.
+                    </p>
+                    <p>
+                        Content creators, marketers, educators, and filmmakers can all benefit from these tools. They enable rapid prototyping, personalized content at scale, 
+                        and professional-quality results without expensive equipment or specialized skills.
+                    </p>
+                    <p>
+                        Current limitations include challenges with realism, temporal coherence, and ethical concerns about misuse. However, with rapid developments like OpenAI's Sora 
+                        pushing boundaries, the future promises even more sophisticated and accessible video creation tools.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Grid -->
+        <section>
+            <h2 class="text-2xl font-bold mb-8 text-center gradient-text">Top Video AI Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- RunwayML -->
+                <div class="tool-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-9 h-9 rounded-lg bg-blue-900/30 flex items-center justify-center mr-4">
+                           <img src="https://zorgle.co.uk/wp-content/uploads/2024/11/Runwayml-logo.png" alt="Chatbots Image" class="w-9 h-9 rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold">RunwayML</h3>
+                    </div>
+                    <p class="text-slate-300 mb-6">An AI video editing suite with tools for text-to-video, inpainting, and more.</p>
+                    <a href="https://runwayml.com" target="_blank" class="btn-primary text-white font-medium py-2 px-4 rounded-lg inline-block w-full text-center">
+                        Visit Site <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Pika Labs -->
+                <div class="tool-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-9 h-9 rounded-lg bg-purple-900/30 flex items-center justify-center mr-4">
+                           <img src="https://pbs.twimg.com/media/GABpc2sXIAAI_Xy.png" alt="Chatbots Image" class="w-9 h-9 rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold">Pika Labs</h3>
+                    </div>
+                    <p class="text-slate-300 mb-6">Generates videos from text prompts with cinematic motion and dynamic effects.</p>
+                    <a href="https://pika.art" target="_blank" class="btn-primary text-white font-medium py-2 px-4 rounded-lg inline-block w-full text-center">
+                        Visit Site <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Sora by OpenAI -->
+                <div class="tool-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-9 h-9 rounded-lg bg-green-900/30 flex items-center justify-center mr-4">
+                           <img src="https://w7.pngwing.com/pngs/704/673/png-transparent-openai-chatgpt-logo-thumbnail.png" alt="Chatbots Image" class="w-9 h-9 rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold">Sora by OpenAI</h3>
+                    </div>
+                    <p class="text-slate-300 mb-6">A powerful AI model that turns text into realistic, dynamic videos. Currently under development.</p>
+                    <a href="https://openai.com/sora" target="_blank" class="btn-primary text-white font-medium py-2 px-4 rounded-lg inline-block w-full text-center">
+                        Visit Site <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- VEED.io -->
+                <div class="tool-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-9 h-9 rounded-lg bg-red-900/30 flex items-center justify-center mr-4">
+                            <img src="https://www.iatools.tools/wp-content/uploads/2025/01/veed-io-logo.jpg" alt="Chatbots Image" class="w-9 h-9 rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold">VEED.io</h3>
+                    </div>
+                    <p class="text-slate-300 mb-6">AI-powered video creation and editing tool for social media and content marketing.</p>
+                    <a href="https://www.veed.io" target="_blank" class="btn-primary text-white font-medium py-2 px-4 rounded-lg inline-block w-full text-center">
+                        Visit Site <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Synthesia -->
+                <div class="tool-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-yellow-900/30 flex items-center justify-center mr-4">
+                            <img src="https://img.icons8.com/fluent/600/synthesia.png" alt="Chatbots Image" class="w-9 h-9 rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold">Synthesia</h3>
+                    </div>
+                    <p class="text-slate-300 mb-6">Create professional videos with AI avatars from plain text. Great for training, ads, and tutorials.</p>
+                    <a href="https://www.synthesia.io" target="_blank" class="btn-primary text-white font-medium py-2 px-4 rounded-lg inline-block w-full text-center">
+                        Visit Site <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Renderforest -->
+                <div class="tool-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-9 h-9 rounded-lg bg-indigo-900/30 flex items-center justify-center mr-4">
+                           <img src="https://w7.pngwing.com/pngs/62/744/png-transparent-logo-renderforest-video-brand-annual-bonuses-blue-angle-content-marketing.png" alt="Chatbots Image" class="w-9 h-9 rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold">Renderforest</h3>
+                    </div>
+                    <p class="text-slate-300 mb-6">Online platform for creating AI-powered animations, explainer videos, and visual branding.</p>
+                    <a href="https://www.renderforest.com" target="_blank" class="btn-primary text-white font-medium py-2 px-4 rounded-lg inline-block w-full text-center">
+                        Visit Site <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-slate-400 border-t border-slate-800">
+        <p>© 2025 Video AI Tools. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Create particle background
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random size between 1px and 3px
+                const size = Math.random() * 2 + 1;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random position
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.top = `${Math.random() * 100}vh`;
+                
+                // Random opacity
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                
+                // Random animation
+                const duration = Math.random() * 20 + 10;
+                particle.style.animation = `float ${duration}s linear infinite`;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Add animation styles
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0% {
+                    transform: translateY(0) translateX(0);
+                }
+                50% {
+                    transform: translateY(-100px) translateX(100px);
+                }
+                100% {
+                    transform: translateY(0) translateX(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Initialize particles when DOM is loaded
+        document.addEventListener('DOMContentLoaded', createParticles);
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=hamzxyz/ai-pluse" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>

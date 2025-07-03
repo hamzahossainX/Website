@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Pulse  - The Latest in Artificial Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            min-height: 100vh;
+        }
+        
+        .glass-card {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
+        }
+        
+        .tool-card {
+            transition: all 0.3s ease;
+        }
+        
+        .tool-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
+        }
+        
+        .news-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+        }
+        
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #38bdf8;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active-nav::after {
+            width: 100%;
+        }
+        
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #38bdf8;
+        }
+        
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #38bdf8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="glass-card fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <span class="text-2xl font-bold gradient-text">AI Pulse </span>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="#home" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                            <a href="#news" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">News</a>
+                            <a href="#categories" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Categories</a>
+                            <a href="#about" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6">
+                        <div class="relative inline-block w-10 mr-2 align-middle select-none">
+                            <input type="checkbox" name="toggle" id="toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
+                            <label for="toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                        </div>
+                        <span class="text-sm mr-4">Dark Mode</span>
+                        <button class="bg-gradient-to-r from-blue-400 to-indigo-500 hover:from-blue-500 hover:to-indigo-600 text-white px-4 py-1 rounded-md text-sm font-medium">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="nav-link text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#news" class="nav-link text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">News</a>
+                <a href="#categories" class="nav-link text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Categories</a>
+                <a href="#about" class="nav-link text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <div class="flex items-center px-3 py-2">
+                    <div class="relative inline-block w-10 mr-2 align-middle select-none">
+                        <input type="checkbox" name="toggle-mobile" id="toggle-mobile" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
+                        <label for="toggle-mobile" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                    </div>
+                    <span class="text-sm">Dark Mode</span>
+                </div>
+                <button class="bg-gradient-to-r from-blue-400 to-indigo-500 hover:from-blue-500 hover:to-indigo-600 text-white px-4 py-1 rounded-md text-sm font-medium ml-3">
+                    Subscribe
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 3D Background -->
+    <div id="particles-js"></div>
+
+    <!-- Main Content -->
+    <div class="pt-16">
+        <!-- Home Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto text-center py-20">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    <span class="gradient-text">AI Pulse </span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto">
+                    Your gateway to the latest AI innovations, tools, and breakthroughs in an immersive 3D experience.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#news" class="bg-gradient-to-r from-blue-400 to-indigo-500 hover:from-blue-500 hover:to-indigo-600 text-white px-6 py-3 rounded-md text-lg font-medium">
+                        Explore AI News
+                    </a>
+                    <a href="#categories" class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-6 py-3 rounded-md text-lg font-medium">
+                        Discover AI Tools
+                    </a>
+                </div>
+                
+                <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="glass-card p-6 rounded-xl">
+                        <div class="text-blue-400 text-4xl mb-4">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Latest Updates</h3>
+                        <p class="text-gray-300">Real-time AI news from top research labs and companies.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl">
+                        <div class="text-purple-400 text-4xl mb-4">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">AI Tools</h3>
+                        <p class="text-gray-300">Curated collection of the best AI tools categorized by function.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl">
+                        <div class="text-pink-400 text-4xl mb-4">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Learn AI</h3>
+                        <p class="text-gray-300">Educational insights into how different AI technologies work.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-2 text-center">
+                    <span class="gradient-text">Latest AI News</span>
+                </h2>
+                <p class="text-xl text-gray-300 mb-12 text-center">Stay updated with the most recent developments in artificial intelligence</p>
+                
+                <div class="mb-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div class="relative w-full md:w-1/2">
+                        <input type="text" placeholder="Search AI news..." class="w-full bg-gray-800 text-white px-4 py-2 pl-10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                    </div>
+                    <div class="flex gap-2 flex-wrap w-full md:w-auto">
+                        <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm">All</button>
+                        <button class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg text-sm">OpenAI</button>
+                        <button class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg text-sm">Google</button>
+                        <button class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg text-sm">NVIDIA</button>
+                        <button class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg text-sm">Research</button>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- News Card 1 -->
+                    <div class="news-card glass-card p-6 rounded-xl transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <img src="https://logo.clearbit.com/openai.com" alt="OpenAI" class="w-8 h-8 rounded-full mr-2">
+                            <span class="text-sm text-gray-300">OpenAI • 2 hours ago</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">GPT-5 Development Confirmed</h3>
+                        <p class="text-gray-300 mb-4">OpenAI CEO confirms GPT-5 is in development with multimodal capabilities that surpass current models...</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs bg-blue-900 text-blue-300 px-2 py-1 rounded">LLMs</span>
+                            <a href="https://explodingtopics.com/blog/new-chatgpt-release-date" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Read More →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- News Card 2 -->
+                    <div class="news-card glass-card p-6 rounded-xl transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <img src="https://logo.clearbit.com/deepmind.com" alt="DeepMind" class="w-8 h-8 rounded-full mr-2">
+                            <span class="text-sm text-gray-300">DeepMind • 5 hours ago</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Breakthrough in Protein Folding</h3>
+                        <p class="text-gray-300 mb-4">AlphaFold 3 achieves unprecedented accuracy in predicting protein structures, accelerating drug discovery...</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs bg-green-900 text-green-300 px-2 py-1 rounded">Biology</span>
+                            <a href="https://www.labiotech.eu/in-depth/alpha-fold-3-drug-discovery/" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Read More →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- News Card 3 -->
+                    <div class="news-card glass-card p-6 rounded-xl transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <img src="https://logo.clearbit.com/nvidia.com" alt="NVIDIA" class="w-8 h-8 rounded-full mr-2">
+                            <span class="text-sm text-gray-300">NVIDIA • 1 day ago</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">New AI Chips Announced</h3>
+                        <p class="text-gray-300 mb-4">NVIDIA unveils next-generation AI processors with 5x performance boost for large language model training...</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs bg-purple-900 text-purple-300 px-2 py-1 rounded">Hardware</span>
+                            <a href="https://nvidianews.nvidia.com/news/generative-ai-rtx-pcs-and-workstations" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Read More →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- News Card 4 -->
+                    <div class="news-card glass-card p-6 rounded-xl transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <img src="https://logo.clearbit.com/anthropic.com" alt="Anthropic" class="w-8 h-8 rounded-full mr-2">
+                            <span class="text-sm text-gray-300">Anthropic • 1 day ago</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Claude 3.5 Released</h3>
+                        <p class="text-gray-300 mb-4">Anthropic's latest model shows significant improvements in reasoning and coding capabilities while maintaining safety...</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs bg-blue-900 text-blue-300 px-2 py-1 rounded">LLMs</span>
+                            <a href="https://www.anthropic.com/news/claude-4" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Read More →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- News Card 5 -->
+                    <div class="news-card glass-card p-6 rounded-xl transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <img src="https://logo.clearbit.com/meta.com" alt="Meta" class="w-8 h-8 rounded-full mr-2">
+                            <span class="text-sm text-gray-300">Meta • 2 days ago</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Llama 3 Open Source Model</h3>
+                        <p class="text-gray-300 mb-4">Meta releases Llama 3 with 400B parameters, setting new benchmarks for open-weight models...</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs bg-blue-900 text-blue-300 px-2 py-1 rounded">Open Source</span>
+                            <a href="https://ai.meta.com/blog/meta-llama-3/" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Read More →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- News Card 6 -->
+                    <div class="news-card glass-card p-6 rounded-xl transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <img src="https://logo.clearbit.com/google.com" alt="Google" class="w-8 h-8 rounded-full mr-2">
+                            <span class="text-sm text-gray-300">Google • 3 days ago</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Gemini 2.0 Preview</h3>
+                        <p class="text-gray-300 mb-4">Google teases Gemini 2.0 with multimodal understanding that rivals human cognition in certain tasks...</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs bg-blue-900 text-blue-300 px-2 py-1 rounded">Multimodal</span>
+                            <a href="https://blog.google/technology/google-deepmind/google-gemini-ai-update-december-2024/" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-10 text-center">
+                    <button class="bg-gradient-to-r from-blue-400 to-indigo-500 hover:from-blue-500 hover:to-indigo-600 text-white px-6 py-3 rounded-md text-lg font-medium">
+                        Load More News
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="categories" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900 bg-opacity-50">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-2 text-center">
+                    <span class="gradient-text">AI Categories</span>
+                </h2>
+                <p class="text-xl text-gray-300 mb-12 text-center">Explore the best AI tools organized by category</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Category Card 1 -->
+                   <a href="#chatbots" class="category-card glass-card p-6 rounded-xl transition duration-300 hover:cursor-pointer">
+                 <div class="flex items-center mb-4">
+                   <div class="bg-blue-900 bg-opacity-50 p-0.5 rounded-full mr-4"> 
+            <img src="https://cdn.imgbin.com/3/8/5/imgbin-computer-icons-internet-bot-robot-g7xC6QLyhwbR0rJB2Ucd2Zt5b.jpg" alt="Chatbots Image" class="w-9 h-9 rounded-full">
+        </div>
+        <h3 class="text-xl font-semibold">Chatbots</h3>
+    </div>
+    <p class="text-gray-300 mb-4">Conversational AI assistants that understand and respond to human language.</p>
+    <div class="flex justify-between items-center">
+        <span class="text-xs text-gray-400">12 tools</span>
+        <span class="text-blue-400 text-sm font-medium">Explore →</span>
+    </div>
+</a>
+                    
+                    <!-- Category Card 2 -->
+                    <a href="index1.html" class="category-card glass-card p-6 rounded-xl transition duration-300 hover:cursor-pointer">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-900 bg-opacity-50 p-0.5 rounded-full mr-4">
+                                
+                                 <img src="https://www.citypng.com/public/uploads/preview/white-igtv-instagram-tv-logo-icon-701751694790928tg1uip2axr.png" alt="Chatbots Image" class="w-9 h-9 rounded-full">
+        
+
+                            </div>
+                            <h3 class="text-xl font-semibold">Video AI</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4">Tools for generating, editing, and enhancing videos using artificial intelligence.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-400">8 tools</span>
+                            <span class="text-blue-400 text-sm font-medium">
+                            Explore →</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Category Card 3 -->
+                    <a href="musicAI.html" class="category-card glass-card p-6 rounded-xl transition duration-300 hover:cursor-pointer">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-pink-900 bg-opacity-50 p-0.5 rounded-full mr-4">
+                                 <img src="https://st4.depositphotos.com/28636338/38362/i/450/depositphotos_383623358-stock-photo-apple-icon-isolated-abstract-backgroun.jpg" alt="Chatbots Image" class="w-9 h-9 rounded-full">
+                                
+                            </div>
+                            <h3 class="text-xl font-semibold">Music AI</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4">AI-powered music generation, composition, and sound design tools.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-400">6 tools</span>
+                            <span class="text-blue-400 text-sm font-medium">Explore →</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Category Card 4 -->
+                    <a href="musicAI.html" class="category-card glass-card p-6 rounded-xl transition duration-300 hover:cursor-pointer">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-yellow-900 bg-opacity-50 p-0.5 rounded-full mr-4">
+                               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl8w4w3IpYSLSTISlp1IMIXDiQD_6UtfXCV7_7XPCix9ybQhEUPtvNErTRqHD3HIhW9YE&usqp=CAU" alt="Chatbots Image" class="w-8 h-8 rounded-full">
+                            </div>
+                            <h3 class="text-xl font-semibold">Image AI</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4">Generate, edit, and enhance images with state-of-the-art AI models.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-400">15 tools</span>
+                            <span class="text-blue-400 text-sm font-medium">Explore →</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Category Card 5 -->
+                    <a href="writingAi.html" class="category-card glass-card p-6 rounded-xl transition duration-300 hover:cursor-pointer">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-900 bg-opacity-50 p-0.5 rounded-full mr-4">
+                                 <img src="https://mavtools.com/wp-content/uploads/2024/10/StealthGPT-AI-Logo-768x768.jpg" alt="Chatbots Image" class="w-9 h-9 rounded-full">
+                            </div>
+                            <h3 class="text-xl font-semibold">Writing AI</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4">AI writing assistants for content creation, copywriting, and editing.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-400">10 tools</span>
+                            <span class="text-blue-400 text-sm font-medium">Explore →</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Category Card 6 -->
+                    <a href="productivity.html" class="category-card glass-card p-6 rounded-xl transition duration-300 hover:cursor-pointer">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-indigo-900 bg-opacity-50 p-0.5 rounded-full mr-4">
+                                 <img src="https://framerusercontent.com/images/UFyYRgvpRsFwATzv7YvUcu3dA.png" alt="Chatbots Image" class="w-9 h-9 rounded-full">
+                            </div>
+                            <h3 class="text-xl font-semibold">Productivity</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4">AI tools to boost your efficiency and automate repetitive tasks.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-400">7 tools</span>
+                            <span class="text-blue-400 text-sm font-medium">Explore →</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Category Card 7 -->
+                    <a href="BusinessAi.html" class="category-card glass-card p-6 rounded-xl transition duration-300 hover:cursor-pointer">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-red-900 bg-opacity-50 p-0.5 rounded-full mr-4">
+                                  <img src="https://d134c7x3v8iied.cloudfront.net/images/hero-bnr/ai-icon-01.png" alt="Chatbots Image" class="w-9 h-9 rounded-full">
+                            </div>
+                            <h3 class="text-xl font-semibold">Business AI</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4">AI solutions for business automation, analytics, and customer service.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-400">9 tools</span>
+                            <span class="text-blue-400 text-sm font-medium">Explore →</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Category Card 8 -->
+                    <a href="code.html" class="category-card glass-card p-6 rounded-xl transition duration-300 hover:cursor-pointer">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-teal-900 bg-opacity-50 p-0.5 rounded-full mr-4">
+                                 <img src="https://static.vecteezy.com/system/resources/previews/043/907/526/non_2x/web-programming-glyph-inverted-icon-design-vector.jpg" alt="Chatbots Image" class="w-9 h-9 rounded-full">
+                            </div>
+                            <h3 class="text-xl font-semibold">Code AI</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4">AI pair programmers and code generation tools for developers.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-400">5 tools</span>
+                            <span class="text-blue-400 text-sm font-medium">Explore →</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chatbots Subcategory Section -->
+        <section id="chatbots" class="py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex items-center mb-8">
+                    <a href="#categories" class="text-blue-400 hover:text-blue-300 mr-2">
+                        <i class="fas fa-arrow-left"></i> Back to Categories
+                    </a>
+                </div>
+                
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <span class="gradient-text">Chatbot AIs</span>
+                </h2>
+                <p class="text-xl text-gray-300 mb-8">Conversational AI assistants that understand and respond to human language using advanced natural language processing.</p>
+                
+                <div class="glass-card p-6 rounded-xl mb-12">
+                    <h3 class="text-2xl font-semibold mb-4">How Chatbots Work</h3>
+                    <p class="text-gray-300 mb-4">
+                        Modern chatbots are powered by large language models (LLMs) that have been trained on massive amounts of text data. These models use transformer architectures to understand context, generate human-like responses, and perform a variety of language tasks.
+                    </p>
+                    <p class="text-gray-300">
+                        Key technologies include natural language processing (NLP), neural networks, and reinforcement learning from human feedback (RLHF) which helps align the models with human preferences.
+                    </p>
+                </div>
+                
+                <h3 class="text-2xl font-semibold mb-6">Top Chatbot AI Tools</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Tool Card 1 -->
+                    <div class="tool-card glass-card p-6 rounded-xl transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <img src="https://logo.clearbit.com/openai.com" alt="ChatGPT" class="w-10 h-10 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-semibold">ChatGPT</h4>
+                                <span class="text-xs text-gray-400">by OpenAI</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 mb-4 text-sm">The most advanced conversational AI with multimodal capabilities and extensive knowledge base.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-blue-900 text-blue-300 px-2 py-1 rounded">GPT-4</span>
+                            <span class="text-xs bg-purple-900 text-purple-300 px-2 py-1 rounded">Multimodal</span>
+                            <span class="text-xs bg-green-900 text-green-300 px-2 py-1 rounded">Code Interpreter</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium">Freemium</span>
+                            <a href="https://openai.com/index/chatgpt/" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Explore →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Tool Card 2 -->
+                    <div class="tool-card glass-card p-6 rounded-xl transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <img src="https://logo.clearbit.com/anthropic.com" alt="Claude" class="w-10 h-10 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-semibold">Claude</h4>
+                                <span class="text-xs text-gray-400">by Anthropic</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 mb-4 text-sm">AI assistant focused on helpfulness, honesty, and harmlessness with strong reasoning capabilities.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-blue-900 text-blue-300 px-2 py-1 rounded">Claude 3.5</span>
+                            <span class="text-xs bg-green-900 text-green-300 px-2 py-1 rounded">Constitutional AI</span>
+                            <span class="text-xs bg-yellow-900 text-yellow-300 px-2 py-1 rounded">Long Context</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium">Freemium</span>
+                            <a href="https://claude.ai/login?returnTo=%2F%3F" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Explore →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Tool Card 3 -->
+                    <div class="tool-card glass-card p-6 rounded-xl transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <img src="https://logo.clearbit.com/google.com" alt="Gemini" class="w-10 h-10 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-semibold">Gemini</h4>
+                                <span class="text-xs text-gray-400">by Google</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 mb-4 text-sm">Google's most capable AI model with strong multimodal understanding and integration with Google services.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-blue-900 text-blue-300 px-2 py-1 rounded">Multimodal</span>
+                            <span class="text-xs bg-purple-900 text-purple-300 px-2 py-1 rounded">Google Integration</span>
+                            <span class="text-xs bg-red-900 text-red-300 px-2 py-1 rounded">1M+ Token Context</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium">Freemium</span>
+                            <a href="https://gemini.google.com/app" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Explore →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Tool Card 4 -->
+                    <div class="tool-card glass-card p-6 rounded-xl transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <img src="https://logosandtypes.com/wp-content/uploads/2025/02/Mistral-AI.png" alt="Mistral" class="w-10 h-10 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-semibold">Mistral Chat</h4>
+                                <span class="text-xs text-gray-400">by Mistral AI</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 mb-4 text-sm">High-performance open-weight models that rival proprietary alternatives in many benchmarks.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-blue-900 text-blue-300 px-2 py-1 rounded">Open Weight</span>
+                            <span class="text-xs bg-green-900 text-green-300 px-2 py-1 rounded">Efficient</span>
+                            <span class="text-xs bg-yellow-900 text-yellow-300 px-2 py-1 rounded">Multilingual</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium">Free</span>
+                            <a href="https://chat.mistral.ai/chat" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Explore →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Tool Card 5 -->
+                    <div class="tool-card glass-card p-6 rounded-xl transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <img src="https://logo.clearbit.com/meta.com" alt="Meta AI" class="w-10 h-10 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-semibold">Meta AI</h4>
+                                <span class="text-xs text-gray-400">by Meta</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 mb-4 text-sm">AI assistant integrated across Meta's platforms with real-time web search capabilities.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-blue-900 text-blue-300 px-2 py-1 rounded">Llama 3</span>
+                            <span class="text-xs bg-purple-900 text-purple-300 px-2 py-1 rounded">Social Integration</span>
+                            <span class="text-xs bg-green-900 text-green-300 px-2 py-1 rounded">Real-time Search</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium">Free</span>
+                            <a href="https://www.meta.ai/" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Explore →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Tool Card 6 -->
+                    <div class="tool-card glass-card p-6 rounded-xl transition duration-300">
+                        <div class="flex items-center mb-4">
+                            <img src="https://logo.clearbit.com/perplexity.ai" alt="Perplexity" class="w-10 h-10 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-semibold">Perplexity AI</h4>
+                                <span class="text-xs text-gray-400">by Perplexity</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 mb-4 text-sm">AI-powered answer engine that provides accurate, sourced information with citations.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-blue-900 text-blue-300 px-2 py-1 rounded">Research</span>
+                            <span class="text-xs bg-purple-900 text-purple-300 px-2 py-1 rounded">Citations</span>
+                            <span class="text-xs bg-green-900 text-green-300 px-2 py-1 rounded">Web Search</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium">Freemium</span>
+                            <a href="https://www.perplexity.ai/" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Explore →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 glass-card p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-4">Chatbot AI Comparison</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left text-gray-300">
+                            <thead class="text-xs text-gray-400 border-b border-gray-700">
+                                <tr>
+                                    <th class="px-4 py-3">Tool</th>
+                                    <th class="px-4 py-3">Model</th>
+                                    <th class="px-4 py-3">Context Length</th>
+                                    <th class="px-4 py-3">Multimodal</th>
+                                    <th class="px-4 py-3">Pricing</th>
+                                    <th class="px-4 py-3">Best For</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-gray-700 hover:bg-gray-800">
+                                    <td class="px-4 py-3 font-medium">ChatGPT</td>
+                                    <td class="px-4 py-3">GPT-4</td>
+                                    <td class="px-4 py-3">128K</td>
+                                    <td class="px-4 py-3">Yes</td>
+                                    <td class="px-4 py-3">$20/month</td>
+                                    <td class="px-4 py-3">General use, coding</td>
+                                </tr>
+                                <tr class="border-b border-gray-700 hover:bg-gray-800">
+                                    <td class="px-4 py-3 font-medium">Claude</td>
+                                    <td class="px-4 py-3">Claude 3.5</td>
+                                    <td class="px-4 py-3">200K</td>
+                                    <td class="px-4 py-3">No</td>
+                                    <td class="px-4 py-3">Free</td>
+                                    <td class="px-4 py-3">Writing, analysis</td>
+                                </tr>
+                                <tr class="border-b border-gray-700 hover:bg-gray-800">
+                                    <td class="px-4 py-3 font-medium">Gemini</td>
+                                    <td class="px-4 py-3">Gemini 1.5</td>
+                                    <td class="px-4 py-3">1M+</td>
+                                    <td class="px-4 py-3">Yes</td>
+                                    <td class="px-4 py-3">Free</td>
+                                    <td class="px-4 py-3">Multimodal tasks</td>
+                                </tr>
+                                <tr class="border-b border-gray-700 hover:bg-gray-800">
+                                    <td class="px-4 py-3 font-medium">Mistral Chat</td>
+                                    <td class="px-4 py-3">Mistral 7B</td>
+                                    <td class="px-4 py-3">32K</td>
+                                    <td class="px-4 py-3">No</td>
+                                    <td class="px-4 py-3">Free</td>
+                                    <td class="px-4 py-3">Open-source alternative</td>
+                                </tr>
+                                <tr class="border-b border-gray-700 hover:bg-gray-800">
+                                    <td class="px-4 py-3 font-medium">Meta AI</td>
+                                    <td class="px-4 py-3">Llama 3</td>
+                                    <td class="px-4 py-3">8K</td>
+                                    <td class="px-4 py-3">Yes</td>
+                                    <td class="px-4 py-3">Free</td>
+                                    <td class="px-4 py-3">Social media integration</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900 bg-opacity-50">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+                    <span class="gradient-text">About AI Pulse </span>
+                </h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="glass-card p-8 rounded-xl">
+                        <h3 class="text-2xl font-semibold mb-4">Our Mission</h3>
+                        <p class="text-gray-300 mb-6">
+                            AI Pulse was created to democratize access to artificial intelligence knowledge and tools. In an era of rapid AI advancement, we aim to be the comprehensive resource that helps individuals and businesses navigate the complex landscape of AI technologies.
+                        </p>
+                        <p class="text-gray-300">
+                            We curate the latest developments, explain complex concepts in accessible ways, and provide unbiased comparisons of AI tools to help you make informed decisions.
+                        </p>
+                    </div>
+                    
+                    <div class="glass-card p-8 rounded-xl">
+                        <h3 class="text-2xl font-semibold mb-4">The Team</h3>
+                        <div class="flex items-center mb-6">
+                            <img src="cropped_circle_image.png" alt="Ismail Hossen" class="w-16 h-16 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-semibold">Ismail Hossen </h4>
+                                <p class="text-gray-400 text-sm">Founder </p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            With a background in computer science and AI research, I built AI Pulse 3D to share his passion for artificial intelligence with the world.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="https://www.facebook.com/hamza.hossain.79/" class="text-blue-400 hover:text-blue-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/ismail-hossen99/" class="text-blue-400 hover:text-blue-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="text-blue-400 hover:text-blue-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://github.com/hamzahossainX" class="text-blue-400 hover:text-blue-300">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 glass-card p-8 rounded-xl">
+
+                    <div class="max-w-2xl mx-auto">
+                        <div data-customgform="cmcnlh4ql004hwncdt36dczo5"></div>
+
+                        <script async src="https://cdn.customgform.com/cgf.js"></script>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-900 to-indigo-900">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Stay Updated with AI Pulse </h2>
+                <p class="text-xl text-gray-300 mb-8">Subscribe to our newsletter for weekly AI updates, tool reviews, and exclusive content.</p>
+                <div class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+                    <input type="email" placeholder="Your email address" class="flex-grow bg-white bg-opacity-10 text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-300">
+                    <button class="bg-gradient-to-r from-blue-400 to-indigo-500 hover:from-blue-500 hover:to-indigo-600 text-white px-6 py-3 rounded-lg text-lg font-medium whitespace-nowrap">
+                        Subscribe
+                    </button>
+                </div>
+                <p class="text-sm text-gray-300 mt-4">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold gradient-text mb-4">AI Pulse </h3>
+                        <p class="text-gray-300 text-sm">
+                            The comprehensive resource for artificial intelligence news, tools, and education.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-200 mb-4">Explore</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-gray-400 hover:text-white text-sm">Home</a></li>
+                            <li><a href="#news" class="text-gray-400 hover:text-white text-sm">AI News</a></li>
+                            <li><a href="#categories" class="text-gray-400 hover:text-white text-sm">AI Categories</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-white text-sm">About</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-200 mb-4">Categories</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#chatbots" class="text-gray-400 hover:text-white text-sm">Chatbots</a></li>
+                            <li><a href="#video" class="text-gray-400 hover:text-white text-sm">Video AI</a></li>
+                            <li><a href="#music" class="text-gray-400 hover:text-white text-sm">Music AI</a></li>
+                            <li><a href="#image" class="text-gray-400 hover:text-white text-sm">Image AI</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-200 mb-4">Connect</h4>
+                        <div class="flex space-x-4 mb-4">
+                            <a href="https://www.facebook.com/hamza.hossain.79/" class="text-gray-400 hover:text-white">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/ismail-hossen99/" class="text-gray-400 hover:text-white">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/hamzahossainX" class="text-gray-400 hover:text-white">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                        <p class="text-gray-400 text-sm">
+                            Email: hamzahosain3842@gmail.com
+                        </p>
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                        &copy; 2025 AI Pulse . All rights reserved.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-500 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Dark mode toggle
+        const toggle = document.getElementById('toggle');
+        const toggleMobile = document.getElementById('toggle-mobile');
+        
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark');
+            toggle.checked = true;
+            if (toggleMobile) toggleMobile.checked = true;
+        }
+        
+        toggle.addEventListener('change', function() {
+            if (this.checked) {
+                document.body.classList.add('dark');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                document.body.classList.remove('dark');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+        
+        if (toggleMobile) {
+            toggleMobile.addEventListener('change', function() {
+                if (this.checked) {
+                    document.body.classList.add('dark');
+                    localStorage.setItem('darkMode', 'enabled');
+                    toggle.checked = true;
+                } else {
+                    document.body.classList.remove('dark');
+                    localStorage.setItem('darkMode', 'disabled');
+                    toggle.checked = false;
+                }
+            });
+        }
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Set active nav link based on scroll position
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', function() {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active-nav');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active-nav');
+                }
+            });
+        });
+
+        // Initialize particles.js
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#3b82f6"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#3b82f6",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+
+</html>

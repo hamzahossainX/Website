@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity AI Tools - Enhance Your Workflow with AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .tool-card {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            transition: all 0.3s ease;
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+            border-color: rgba(56, 189, 248, 0.4);
+        }
+        .btn-primary {
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(56, 189, 248, 0.4);
+        }
+        .particle {
+            position: absolute;
+            background-color: rgba(56, 189, 248, 0.2);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div id="particles"></div>
+
+    <header class="py-12 px-4 sm:px-6 lg:px-8 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+                <span class="gradient-text">Productivity AI Tools</span>
+            </h1>
+            <p class="text-xl text-slate-300 mb-8">Streamline your tasks, manage your time, and supercharge your efficiency with AI</p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <section class="mb-16">
+            <div class="bg-slate-800/50 rounded-xl p-6 md:p-8 border border-slate-700/50 shadow-lg">
+                <h2 class="text-2xl font-bold mb-4 gradient-text">Boost Your Efficiency with Artificial Intelligence</h2>
+                <div class="space-y-4 text-slate-300">
+                    <p>
+                        Productivity AI tools leverage artificial intelligence to automate routine tasks, organize information, 
+                        optimize workflows, and provide intelligent assistance, helping individuals and teams achieve more with less effort. 
+                        These tools are designed to free up your time from mundane chores, allowing you to focus on high-value, creative work.
+                    </p>
+                    <p>
+                        From intelligent scheduling and meeting summaries to smart document organization and personalized task management, 
+                        AI can significantly enhance how you work. They learn from your habits and preferences, offering predictive insights 
+                        and automating actions that traditionally consume valuable time and mental energy.
+                    </p>
+                    <p>
+                        Whether you're a student, a freelancer, or part of a large enterprise, integrating AI into your daily routine 
+                        can lead to remarkable improvements in focus, output quality, and overall well-being by reducing digital clutter and cognitive load.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-bold mb-8 text-center gradient-text">Top Productivity AI Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="tool-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-9 h-9 rounded-lg bg-emerald-900/30 flex items-center justify-center mr-4">
+                           <img src="https://ai.ls/assets/openai-logos/PNGs/openai-logomark.png" alt="Chatbots Image" class="w-9 h-9 rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold">ChatGPT (OpenAI)</h3>
+                    </div>
+                    <p class="text-slate-300 mb-6">Versatile AI for brainstorming, drafting content, summarizing, and answering questions.</p>
+                    <a href="https://chat.openai.com/" target="_blank" class="btn-primary text-white font-medium py-2 px-4 rounded-lg inline-block w-full text-center">
+                        Visit Site <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="tool-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-9 h-9 rounded-lg bg-purple-900/30 flex items-center justify-center mr-4">
+                             <img src="https://static.vecteezy.com/system/resources/thumbnails/046/861/646/small_2x/gemini-icon-on-a-transparent-background-free-png.png" alt="Chatbots Image" class="w-8 h-8 rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold">Google Gemini</h3>
+                    </div>
+                    <p class="text-slate-300 mb-6">Google's advanced AI for creative writing, coding assistance, research, and more.</p>
+                    <a href="https://gemini.google.com/" target="_blank" class="btn-primary text-white font-medium py-2 px-4 rounded-lg inline-block w-full text-center">
+                        Visit Site <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="tool-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-9 h-9 rounded-lg bg-orange-900/30 flex items-center justify-center mr-4">
+                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGJNa7jpKDqGUqRJo59vaETFJkal7lu5zgkA&s" alt="Chatbots Image" class="w-9 h-9 rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold">Zapier</h3>
+                    </div>
+                    <p class="text-slate-300 mb-6">Automates workflows by connecting your favorite apps and services with AI-driven tasks.</p>
+                    <a href="https://zapier.com/" target="_blank" class="btn-primary text-white font-medium py-2 px-4 rounded-lg inline-block w-full text-center">
+                        Visit Site <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="tool-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-9 h-9 rounded-lg bg-blue-900/30 flex items-center justify-center mr-4">
+                              <img src="https://pngdownloads.wordpress.com/wp-content/uploads/2024/01/microsoft-copilot-excel-logo-png.jpg?w=850" alt="Chatbots Image" class="w-9 h-9 rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold">Microsoft Copilot</h3>
+                    </div>
+                    <p class="text-slate-300 mb-6">AI assistant integrated into Microsoft 365 apps for document creation, data analysis, and email management.</p>
+                    <a href="https://www.microsoft.com/en-us/microsoft-copilot" target="_blank" class="btn-primary text-white font-medium py-2 px-4 rounded-lg inline-block w-full text-center">
+                        Visit Site <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="tool-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-9  h-9 rounded-lg bg-cyan-900/30 flex items-center justify-center mr-4">
+                             <img src="https://w7.pngwing.com/pngs/106/993/png-transparent-trello-logos-brands-icon.png" alt="Chatbots Image" class="w-9 h-9 rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold">Trello (with AI Power-Ups)</h3>
+                    </div>
+                    <p class="text-slate-300 mb-6">Project management tool with AI add-ons for smart task assignment, summaries, and automation.</p>
+                    <a href="https://trello.com/" target="_blank" class="btn-primary text-white font-medium py-2 px-4 rounded-lg inline-block w-full text-center">
+                        Visit Site <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="tool-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-9 h-9 rounded-lg bg-pink-900/30 flex items-center justify-center mr-4">
+                              <img src="https://cdn.productived.net/media/pages/reviews/sanebox/269a872ac9-1662563297/featured-0x400.png" alt="Chatbots Image" class="w-9 h-9 rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold">SaneBox</h3>
+                    </div>
+                    <p class="text-slate-300 mb-6">AI-powered email management that intelligently filters, prioritizes, and organizes your inbox.</p>
+                    <a href="https://www.sanebox.com/" target="_blank" class="btn-primary text-white font-medium py-2 px-4 rounded-lg inline-block w-full text-center">
+                        Visit Site <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-8 text-center text-slate-400 border-t border-slate-800">
+        <p>© 2025 Productivity AI Tools. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Create particle background
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random size between 1px and 3px
+                const size = Math.random() * 2 + 1;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random position
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.top = `${Math.random() * 100}vh`;
+                
+                // Random opacity
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                
+                // Random animation
+                const duration = Math.random() * 20 + 10;
+                particle.style.animation = `float ${duration}s linear infinite`;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Add animation styles
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0% {
+                    transform: translateY(0) translateX(0);
+                }
+                50% {
+                    transform: translateY(-100px) translateX(100px);
+                }
+                100% {
+                    transform: translateY(0) translateX(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Initialize particles when DOM is loaded
+        document.addEventListener('DOMContentLoaded', createParticles);
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=hamzxyz/ai-pluse" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>

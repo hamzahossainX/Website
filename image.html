@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image AI Tools - Create & Enhance Visuals with AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .tool-card {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            transition: all 0.3s ease;
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+            border-color: rgba(56, 189, 248, 0.4);
+        }
+        .btn-primary {
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(56, 189, 248, 0.4);
+        }
+        .particle {
+            position: absolute;
+            background-color: rgba(56, 189, 248, 0.2);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div id="particles"></div>
+
+    <header class="py-12 px-4 sm:px-6 lg:px-8 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+                <span class="gradient-text">Image AI Tools</span>
+            </h1>
+            <p class="text-xl text-slate-300 mb-8">Generate, edit, and enhance stunning visuals with the power of artificial intelligence</p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <section class="mb-16">
+            <div class="bg-slate-800/50 rounded-xl p-6 md:p-8 border border-slate-700/50 shadow-lg">
+                <h2 class="text-2xl font-bold mb-4 gradient-text">Revolutionizing Visual Content with AI</h2>
+                <div class="space-y-4 text-slate-300">
+                    <p>
+                        Image AI tools utilize artificial intelligence to create, modify, and analyze images. 
+                        These advanced applications are transforming the fields of graphic design, photography, marketing, 
+                        and digital art by automating complex visual tasks and enabling entirely new creative possibilities.
+                    </p>
+                    <p>
+                        From generating photorealistic images from text descriptions (text-to-image) to upscaling low-resolution photos, 
+                        removing unwanted objects, or even applying artistic styles, AI image tools leverage deep learning models like 
+                        Generative Adversarial Networks (GANs) and diffusion models. They can understand visual context, replicate styles, 
+                        and produce consistent, high-quality results at unprecedented speed.
+                    </p>
+                    <p>
+                        Whether you're a designer seeking inspiration, a marketer needing unique visuals, a photographer enhancing your shots, 
+                        or simply an enthusiast exploring new artistic mediums, these tools offer powerful capabilities to streamline your 
+                        workflow and bring your visual ideas to life without requiring extensive technical skills.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-bold mb-8 text-center gradient-text">Top Image AI Tools</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="tool-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-blue-900/30 flex items-center justify-center mr-4">
+                             <img src="https://pngdownloads.wordpress.com/wp-content/uploads/2023/05/midjourney-logo-png.jpg" alt="Chatbots Image" class="w-9 h-9 rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold">Midjourney</h3>
+                    </div>
+                    <p class="text-slate-300 mb-6">Popular AI art generator creating stunning images from text prompts.</p>
+                    <a href="https://www.midjourney.com/" target="_blank" class="btn-primary text-white font-medium py-2 px-4 rounded-lg inline-block w-full text-center">
+                        Visit Site <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="tool-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-purple-900/30 flex items-center justify-center mr-4">
+                            <img src="https://static.swiftask.ai/profiles/6ea5bbca-3061-4bb1-9cf8-495937188241/user_2403.png" alt="Chatbots Image" class="w-9 h-9 rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold">DALL-E 3 (OpenAI)</h3>
+                    </div>
+                    <p class="text-slate-300 mb-6">Generates high-quality images from natural language descriptions, integrated with ChatGPT.</p>
+                    <a href="https://openai.com/dall-e-3" target="_blank" class="btn-primary text-white font-medium py-2 px-4 rounded-lg inline-block w-full text-center">
+                        Visit Site <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="tool-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-red-900/30 flex items-center justify-center mr-4">
+                             <img src="https://i.pinimg.com/736x/0d/94/71/0d94714c2ce38f98154e6193f457b80c.jpg" alt="Chatbots Image" class="w-9 h-9 rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold">Adobe Firefly</h3>
+                    </div>
+                    <p class="text-slate-300 mb-6">Generative AI for creative workflows, integrated into Adobe Creative Cloud applications.</p>
+                    <a href="https://www.adobe.com/sensei/generative-ai/firefly.html" target="_blank" class="btn-primary text-white font-medium py-2 px-4 rounded-lg inline-block w-full text-center">
+                        Visit Site <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="tool-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-green-900/30 flex items-center justify-center mr-4">
+                            <img src="https://w7.pngwing.com/pngs/645/981/png-transparent-topaz-labs-graphy-grapher-tutorial-introduction-angle-studio-photography-thumbnail.png" alt="Chatbots Image" class="w-9 h-9 rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold">Topaz Labs</h3>
+                    </div>
+                    <p class="text-slate-300 mb-6">AI-powered image enhancement software for sharpening, denoising, and upscaling photos.</p>
+                    <a href="https://www.topazlabs.com/" target="_blank" class="btn-primary text-white font-medium py-2 px-4 rounded-lg inline-block w-full text-center">
+                        Visit Site <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="tool-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-yellow-900/30 flex items-center justify-center mr-4">
+                             <img src="https://st0.static.xsbapp.com/market-operations/market/side/1718351346137.png" alt="Chatbots Image" class="w-9 h-9 rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold">Remove.bg</h3>
+                    </div>
+                    <p class="text-slate-300 mb-6">Automatically removes backgrounds from images in seconds using AI.</p>
+                    <a href="https://www.remove.bg/" target="_blank" class="btn-primary text-white font-medium py-2 px-4 rounded-lg inline-block w-full text-center">
+                        Visit Site <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="tool-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-teal-900/30 flex items-center justify-center mr-4">
+                             <img src="https://images.seeklogo.com/logo-png/51/1/stability-ai-logo-png_seeklogo-515005.png" alt="Chatbots Image" class="w-9 h-9 rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold">Stable Diffusion</h3>
+                    </div>
+                    <p class="text-slate-300 mb-6">Open-source text-to-image model for generating diverse and high-quality images.</p>
+                    <a href="https://stability.ai/stable-diffusion" target="_blank" class="btn-primary text-white font-medium py-2 px-4 rounded-lg inline-block w-full text-center">
+                        Visit Site <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-8 text-center text-slate-400 border-t border-slate-800">
+        <p>© 2025 Image AI Tools. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Create particle background
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random size between 1px and 3px
+                const size = Math.random() * 2 + 1;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random position
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.top = `${Math.random() * 100}vh`;
+                
+                // Random opacity
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                
+                // Random animation
+                const duration = Math.random() * 20 + 10;
+                particle.style.animation = `float ${duration}s linear infinite`;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Add animation styles
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0% {
+                    transform: translateY(0) translateX(0);
+                }
+                50% {
+                    transform: translateY(-100px) translateX(100px);
+                }
+                100% {
+                    transform: translateY(0) translateX(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Initialize particles when DOM is loaded
+        document.addEventListener('DOMContentLoaded', createParticles);
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=hamzxyz/ai-pluse" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
